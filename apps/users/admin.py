@@ -9,6 +9,6 @@ class CustomUserAdmin(UserAdmin):
     list_filter = ["group", "is_active", "is_deleted"]
     search_fields = ["username", "email"]
     ordering = ["-date_joined"]
-    fieldsets = UserAdmin.fieldsets + (
-        ("DevTasks", {"fields": ("group", "is_deleted")}),
-    )
+    fieldsets = tuple(list(UserAdmin.fieldsets) + [
+        ("DevTasks", {"fields": ["group", "is_deleted"]}),
+    ])

@@ -37,9 +37,6 @@ class CustomUserManager(UserManager):
 
 
 class User(AbstractUser):
-    # User herda de AbstractUser em vez de BaseModel para evitar conflito
-    # com o sistema de autenticação do Django — por isso os campos de
-    # BaseModel são replicados aqui manualmente.
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, verbose_name="ID")
     email = models.EmailField(unique=True, verbose_name="E-mail")
     username = models.CharField(max_length=150, unique=True, verbose_name="Nome de usuário")

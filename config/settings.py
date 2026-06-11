@@ -1,7 +1,7 @@
-import os
 import dj_database_url
 from datetime import timedelta
 from pathlib import Path
+from typing import cast
 
 from decouple import config, Csv
 
@@ -67,7 +67,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "config.wsgi.application"
 
-_DATABASE_URL = config("DATABASE_URL", default="")
+_DATABASE_URL = cast( str, config("DATABASE_URL", default="") )
 
 if _DATABASE_URL:
     DATABASES = {

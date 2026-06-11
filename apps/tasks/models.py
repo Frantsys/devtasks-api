@@ -36,4 +36,4 @@ class Task(BaseModel):
         verbose_name_plural = "Tarefas"
 
     def __str__(self):
-        return f"[{self.get_priority_display()}] {self.title} ({self.get_status_display()})"
+        return f"[{self.get_priority_display()}] {self.title} ({self.get_status_display()})"  # type: ignore

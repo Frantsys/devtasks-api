@@ -62,4 +62,4 @@ class Project(BaseModel):
         verbose_name_plural = "Projetos"
 
     def __str__(self):
-        return f"{self.title} [{self.get_status_display()}]"
+        return f"{self.title} [{self.get_status_display()}]" # type: ignore
